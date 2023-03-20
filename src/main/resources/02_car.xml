@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="car" class="by.mysite.entities.Car"/>
+
+     <bean name="car1" class="by.mysite.entities.Car">
+         <constructor-arg value="Audi"/>
+     </bean>
+    <bean name="car2" class="by.mysite.entities.Car">
+        <property name="id" value="10"/>
+    </bean>
+    <bean name="car3" class="by.mysite.entities.Car">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="BMW"/>
+    </bean>
+    <bean name="car4" class="by.mysite.entities.Car">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="model" value="KIA"/>
+    </bean>
+
+    <bean name="engine-gas" class="by.mysite.entities.Engine">
+        <constructor-arg value="Gasoline"/>
+    </bean>
+
+    <bean name="car5" class="by.mysite.entities.Car">
+        <constructor-arg name="id" value="100"/>
+        <constructor-arg name="model" value="Ferrari"/>
+        <constructor-arg name="engine" ref="engine-gas"/>
+    </bean>
+</beans>
